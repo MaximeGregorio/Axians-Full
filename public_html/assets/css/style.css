@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Conthrax Sb";
+    src: url("conthrax-sb.ttf");
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Conthrax Sb", sans-serif, "Comic Sans MS";
+}
+h1 {
+    margin: 0;
+    font-size: 1.4em;
+}
+ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#user {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+#main-ul li ul li a, #main-ul li ul li {
+    font-size: 0.9em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#main-ul li ul li a:hover {
+    color: black;
+    background-color: white;
+}
+#main-ul li ul li a {
+    width: 100%;
+    height: 100%;
+}
+
+#main-ul li ul {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+}
+#menu-header {
+    background-color: rgb(0, 94, 184);
+    width: 13.7%;
+    height: 100vh;
+    overflow: auto;
+}
+#user-info {
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    background-color: rgb(0, 94, 184);
+}
+img {
+    width: 13.7%;
+}
+.option-button {
+    text-decoration: none;
+    color: white;
+}
+#flex {
+    display: flex;
+    flex-direction: row;
+}
+#main-page {
+    width: 100%;
+}

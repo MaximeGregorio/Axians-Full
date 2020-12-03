@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css">
+    <title>Portail Axians</title>
+</head>
+    <body>
+        <header>
+            <div id="head">
+                <div id="user-info">
+                    <img src="assets/images/Logo.png" alt="Logo Axians">
+                    <div id="user">
+                        <!--<a href=""><img src="assets/images/Logout.png" alt="Log out img"></a>
+                        <a href=""><img src="assets/images/Settings.png" alt="Setting img"></a>-->
+                        <p>%SESSION_NAME% %SESSION_LASTNAME%</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="flex">
+            <div id="menu-header">
+                <ul id="main-ul">
+                    <li><h1 class="menu-title">Import / Export</h1>
+                    <ul>
+                        <li><a onclick='loadDoc("import")' class="option-button">Import</a></li>
+                        <li><a onclick='loadDoc("export")' class="option-button">Export</a></li>
+                            <li><a onclick="loadDoc('blabla')" href="#" class="option-button">Option 3</a></li>
+                        </ul>
+                    </li>
+                    <li><h1 class="menu-title">Menu 2</h1>
+                        <ul>
+                            <li><a href="#" class="option-button">Option 1</a></li>
+                            <li><a href="#" class="option-button">Option 2</a></li>
+                            <li><a href="#" class="option-button">Option 3</a></li>
+                        </ul>
+                    </li>
+                    <li><h1 class="menu-title">Menu 3</h1>
+                        <ul>
+                            <li><a href="#" class="option-button">Option 1</a></li>
+                            <li><a href="#" class="option-button">Option 2</a></li>
+                            <li><a href="#" class="option-button">Option 3</a></li>
+                        </ul>
+                    </li>
+                    <li><h1 class="menu-title">Menu 4</h1>
+                        <ul>
+                            <li><a href="#" class="option-button">Option 1</a></li>
+                            <li><a href="#" class="option-button">Option 2</a></li>
+                            <li><a href="#" class="option-button">Option 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="main-page">
+            </div>
+        </div>
+        <script src="assets/js/index.js"></script>
+    </body>
+</html>

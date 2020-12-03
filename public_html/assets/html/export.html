@@ -1,0 +1,21 @@
+<h1>Formulaire exportation</h1>
+
+<h3># Il faut mettre l'Ajax #</h3>
+
+<form action="/import" method="get">
+    <select name="database">
+        <optgroup label="Nom de la base"></optgroup>
+        <option value="base1">BASE 1</option>
+        <option value="base2">BASE 2</option>
+        <option value="base3">BASE 3</option>
+    </select>
+    <select name="schemas">
+        <optgroup label="Nom du schemas"></optgroup>
+        <option value="sch1">SCH 1</option>
+        <option value="sch2">SCH 2</option>
+        <option value="sch3">SCH 3</option>
+    </select>
+    <label for="sqlLite">Exporter au format SQLite</label>
+    <input type="checkbox" name="sqLite" id="sqlLite">
+    <input type="submit">
+</form>

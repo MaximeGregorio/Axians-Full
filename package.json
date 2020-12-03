@@ -1,0 +1,20 @@
+{
+  "name": "axians_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express-list-endpoints": "^5.0.0",
+    "express-session": "^1.17.1",
+    "ini": "^1.3.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "description": ""
+}
