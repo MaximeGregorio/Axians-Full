@@ -1,6 +1,28 @@
 #main-page form{
     display: flex;
     flex-direction: column;
-    margin: auto;
-    width: 20%;
+    align-items: center;
 }
+
+
+
+#div_choix{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.choix {
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.choix select{
+    width: 20%;
+    font-size:25px;
+}
+
