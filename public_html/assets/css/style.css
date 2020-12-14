@@ -5,7 +5,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: sans-serif;
-    background: url(../images/bg.jpg) no-repeat center fixed;
+    background: url(../images/bg_index.jpg) no-repeat center fixed;
     background-size: cover;
 }
 h1 {
