@@ -24,21 +24,21 @@
                 <ul id="main-ul">
                     <li><h1 class="menu-title">Import / Export</h1>
                     <ul>
-                        <li><a onclick='loadDoc("import")' class="option-button">Import</a></li>
-                        <li><a onclick='loadDoc("export")' class="option-button">Export</a></li>
-                            <li><a onclick="loadDoc('blabla')" href="#" class="option-button">Option 3</a></li>
+                        <li><a id="import" href="#" class="option-button">Import</a></li>
+                        <li><a id="export" href="#" class="option-button">Export</a></li>
+                        <li><a href="#" class="option-button">Option 3</a></li>
                         </ul>
                     </li>
                     <li><h1 class="menu-title">Controle</h1>
                         <ul>
-                            <li><a onclick="loadDoc('controle_jeuDeDonnees')" class="option-button">Contrôler un jeu de données</a></li>
-                            <li><a href="#" class="option-button">Option 2</a></li>
+                            <li><a id="controle_jeuDeDonnees" href="#" class="option-button">Contrôler un jeu de données</a></li>
+                            <li><a id="controle_schemaDonnees" href="#" class="option-button">Contrôler un schéma de données</a></li>
                             <li><a href="#" class="option-button">Option 3</a></li>
                         </ul>
                     </li>
-                    <li><h1 class="menu-title">Menu 3</h1>
+                    <li><h1 class="menu-title">Gestion Utilisateur</h1>
                         <ul>
-                            <li><a href="#" class="option-button">Option 1</a></li>
+                            <li><a id="test" href="#" class="option-button">Gestion Utilisateur</a></li>
                             <li><a href="#" class="option-button">Option 2</a></li>
                             <li><a href="#" class="option-button">Option 3</a></li>
                         </ul>
@@ -55,6 +55,6 @@
             <div id="main-page">
             </div>
         </div>
-        <script src="assets/js/index.js"></script>
+        <script src="assets/js/index.js" async></script>
     </body>
 </html>

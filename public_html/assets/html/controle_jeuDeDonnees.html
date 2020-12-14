@@ -1,4 +1,26 @@
+<h3># Il faut mettre l'Ajax #</h3>
 
-<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-    <p>Déposez vos fichiers ZIP ici</p>
-</div>
+<!-- Formulaire de controle de jeu de données -->
+
+<form action="/import" method="post">
+
+    <!-- Création d'un endroit pour déposer un fichier zip -->
+    <!-- Mise en place des moyens de sélection avec le nom approprié -->
+    <!-- Création du bouton pour confirmer l'envoi du formulaire -->
+
+    <input type="file" id="drop_zone" name="file" accept=".zip" required>
+    <select name="type">
+        <option>TYPE 1</option>
+        <option>TYPE 2</option>
+        <option>TYPE 3</option>
+    </select>
+
+    <select name="SQLFile">
+        <option>SQL 1</option>
+        <option>SQL 2</option>
+        <option>SQL 3</option>
+    </select>
+
+    <button>Controler</button>
+
+</form>

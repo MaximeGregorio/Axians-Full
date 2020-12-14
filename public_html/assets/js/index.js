@@ -7,10 +7,26 @@ function loadDoc(button) {
             document.getElementById("main-page").innerHTML = this.responseText;
         }
     };
-
     xhr.open("GET", "/assets/html/" + button + ".html");
     xhr.send();
 
 }
+
+/** Quand le bouton est cliqué
+ *
+ * @param {Element} element
+ */
+function buttonClick(element) {
+    if (element.className === "option-button") {
+        let id = element.id;
+        loadDoc(id);
+    }
+}
+
+Array.from(document.getElementsByClassName("option-button")).forEach(function (element, index) {
+    element.addEventListener("click", () => {
+        buttonClick(element);
+    })
+});
 
 loadDoc("import");
