@@ -87,7 +87,7 @@ router.get('/*.html', function(req, res) {
     res.end(getTextRessource(req.url, res));
 });
 
-// Permet aux requêtes AJAX
+// Pour les requêtes AJAX
 router.get('/assets/html/*', function(req, res) {
     res.end(getTextRessource(req.url, res));
 });
