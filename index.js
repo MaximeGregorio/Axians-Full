@@ -1,9 +1,6 @@
 const fs = require("fs");
-const path = require('path');
 const ini = require('ini');
-const express = require('express');
-
-const app = express()
+const http = require("http");
 
 // Récupération du fichier de configuration config.ini
 const configFile = fs.readFileSync('./config.ini', 'utf-8');
@@ -32,13 +29,10 @@ const whitelist = config.Lists.Whitelist
 const whitelistEnabled = config.Lists.EnableWhitelist
 const blacklistEnabled = config.Lists.EnableBlacklist
 
-// Création du routeur expressJS
-const router = express.Router();
-
 
 /** Fonction de récupération des ressources dans la racine du site
  * @param {String} url
- * @param {Response} res
+ * @param {ServerResponse} res
  * @returns {Buffer}
  */
 function getRessource(url, res) {
@@ -52,98 +46,98 @@ function getRessource(url, res) {
 
 /** Renvoi une ressource sous la forme de chaine de caractère
  * @param {String} url
- * @param {Response} res
+ * @param {ServerResponse} res
  * @returns {string}
  */
 function getTextRessource(url, res) {
-    return getRessource(url, res).toString();
+    let contentTxt = getRessource(url, res)
+    if (contentTxt !== undefined) {
+        return contentTxt.toString();
+    }
 }
 
 /** Renvoi une erreur 404 (Not Found)
- * @param {Response} res
+ * @param {ServerResponse} res
  */
 function send404(res) {
     res.setHeader("Content-Type", "text/html");
-    res.status(404);
-    res.end(getTextRessource(page404));
+    res.writeHead(404);
+    res.end(getTextRessource(page404, res));
 }
 
 /** Renvoi une erreur 403 (Forbidden)
- * @param {Response} res
+ * @param {ServerResponse} res
  */
 function send403(res) {
     res.setHeader("Content-Type", "text/html");
-    res.status(403);
-    res.end(getTextRessource(page403));
+    res.writeHead(403);
+    res.end(getTextRessource(page403, res));
 }
 
-// Affiche index.html quand le client demande la racine du site
-router.get('/', function(req, res) {
-    res.end(getTextRessource("/index.html", res));
-});
+function sendResponse(content, res, contentType) {
+    res.writeHead(200, {"Content-Type" : contentType});
+    res.end(content);
+}
 
-// Renvoi une page html situé à la racine (index ou login) si non trouvé renvois une erreur 404
-router.get('/*.html', function(req, res) {
-    res.end(getTextRessource(req.url, res));
-});
 
-// Pour les requêtes AJAX
-router.get('/assets/html/*', function(req, res) {
-    res.end(getTextRessource(req.url, res));
-});
+const server = http.createServer((req, res) => {
 
-// Renvoi les fichiers CSS
-router.get("/assets/css/*.css", function (req, res) {
-    if (req.url.indexOf("css") !== -1) {
-        res.setHeader("Content-Type", "text/css");
-        res.end(getTextRessource(req.url, res));
-    } else {
+    let url = req.url;
 
-    }
-});
-
-// Renvoi les fichiers TTF
-router.get("/assets/css/*.ttf", function (req, res) {
-    res.setHeader("Content-Type", "application/octet-stream");
-    res.end(getRessource(req.url, res));
-});
-
-// Renvoi les script Javascript
-router.get("/assets/js/*", function (req, res) {
-    res.setHeader("Content-Type", "appplication/script");
-    res.end(getRessource(req.url, res));
-});
-
-// Renvoi les image
-router.get("/assets/images/*", function (req, res) {
-
-    let options = {
-        root: path.join(__dirname, 'public_html'),
-        dotfiles: 'deny',
-        headers: {
-            'x-timestamp': Date.now(),
-            'x-sent': true
-        }
+    if (url === '/') {
+        url = "/index.html";
     }
 
-    res.sendFile(req.url, options);
+    let ext = url.split(".")[1];
+    let content;
 
-})
+    switch (ext) {
+        case "html":
+            content = getTextRessource(url, res);
+            if (content != undefined) {
+                sendResponse(content, res, "text/html");
+            }
+            break;
 
-// Formulaire get et Post
-// todo : Traitement des formulaires
-router.all("/form/*", function (req, res) {
-    res.setHeader("Content-Type", "text/html");
-    res.set({ 'content-type': 'text/html; charset=utf-8' });
-    res.end("Le formulaire a bien été reçu");
-})
+        case "css":
+            content = getTextRessource(url, res);
+            if (content != undefined) {
+                sendResponse(content, res, "text/css");
+            }
+            break;
 
-// Route par défaut => Erreur 404
-router.all("/*", function (req, res) {
-    send404(res);
+        case "js":
+
+            content = getRessource(url, res);
+            if (content != undefined) {
+                sendResponse(content, res, "application/x-javascript");
+            }
+            break;
+
+        case "svg":
+        case "jpeg":
+        case "gif":
+        case "png":
+        case "jpg":
+
+            content = getRessource(url, res);
+
+            if (content != undefined) {
+                if (ext != "svg") {
+                    sendResponse(content, res, "image/" + ext);
+                } else {
+                    sendResponse(content, res, "image/svg+xml");
+                }
+            }
+            break;
+
+        default:
+            send404(res);
+    }
+
+
+}).listen(port, host, () => {
+    console.log("Serveur running on http://" + domain + ":" + port);
+    console.log("Serveur running on http://" + host + ":" + port);
+
 });
-
-// Lancement du serveur
-app.use('/', router);
-console.log("Server listen on http://" + domain + ":" + port);
-app.listen(port);
