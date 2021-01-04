@@ -9,20 +9,22 @@
 <body>
 <img id="logo" src="assets/images/logo.png" alt="logo axians">
 
-<div class="login-box">
+<form action="/" method="get">
+    <div class="login-box">
 
-    <h1>Connexion</h1>
-    <div class="textbox">
-        <i class="fas fa-user"></i>
-        <input type="text" placeholder="Identifiant">
+        <h1>Connexion</h1>
+        <div class="textbox">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Identifiant">
+        </div>
+
+        <div class="textbox">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Mot de passe">
+        </div>
+
+        <input type="submit" class="bouton" value="Connexion">
     </div>
-
-    <div class="textbox">
-        <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Mot de passe">
-    </div>
-
-    <input type="button" class="bouton" value="Connexion">
-</div>
+</form>
 </body>
 </html>

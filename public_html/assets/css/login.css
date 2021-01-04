@@ -1,8 +1,9 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css"; /* Pour pouvoir utiliser les petites images de login avec <i>*/
+
 @font-face {
     font-family: "Conthrax Sb";
     src: url("conthrax-sb.ttf");
 }
-@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css"; /* Pour pouvoir utiliser les petites images de login avec <i>*/
 
 #logo{
     display: block;

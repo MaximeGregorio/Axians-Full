@@ -140,9 +140,7 @@ router.all("/form/*", function (req, res) {
 
 // Route par défaut => Erreur 404
 router.all("/*", function (req, res) {
-
     send404(res);
-
 });
 
 // Lancement du serveur
