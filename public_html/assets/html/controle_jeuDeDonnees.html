@@ -8,19 +8,29 @@
     <!-- Mise en place des moyens de sélection avec le nom approprié -->
     <!-- Création du bouton pour confirmer l'envoi du formulaire -->
 
-    <input type="file" id="drop_zone" name="file" accept=".zip" required>
-    <select name="type">
-        <option>TYPE 1</option>
-        <option>TYPE 2</option>
-        <option>TYPE 3</option>
-    </select>
+        <div class="form-box">
+            <div id="div_choix">
+                <div id="drop_zone">
+                    <input type="file" class="hidden_input" name="file" accept=".zip" required>
+                </div>
+                <div class="choix">
+                    <select name="type">
+                        <option>TYPE 1</option>
+                        <option>TYPE 2</option>
+                        <option>TYPE 3</option>
+                    </select>
+                </div>
 
-    <select name="SQLFile">
-        <option>SQL 1</option>
-        <option>SQL 2</option>
-        <option>SQL 3</option>
-    </select>
+                <div class="choix">
+                    <select name="SQLFile">
+                        <option>SQL 1</option>
+                        <option>SQL 2</option>
+                        <option>SQL 3</option>
+                    </select>
+                </div>
 
-    <button>Controler</button>
+                <button>Controler</button>
+            </div>
+        </div>
 
 </form>

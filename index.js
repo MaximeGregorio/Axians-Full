@@ -94,7 +94,7 @@ const server = http.createServer((req, res) => {
     switch (ext) {
         case "html":
             content = getTextRessource(url, res);
-            if (content != undefined) {
+            if (content !== undefined) {
                 sendResponse(content, res, "text/html");
             }
             break;

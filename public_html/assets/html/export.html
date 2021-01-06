@@ -1,24 +1,34 @@
-<link rel="stylesheet" type="text/css" href="assets/css/export.css">
 <h1>Formulaire exportation</h1>
 
 <h3># Il faut mettre l'Ajax #</h3>
 
 <form action="/import" method="get">
-    <select name="database">
-        <div class="export-box">
-            <optgroup label="Nom de la base"></optgroup>
-            <option value="base1">BASE 1</option>
-            <option value="base2">BASE 2</option>
-            <option value="base3">BASE 3</option>
-        </select>
-        <select name="schemas">
-            <optgroup label="Nom du schemas"></optgroup>
-            <option value="sch1">SCH 1</option>
-            <option value="sch2">SCH 2</option>
-            <option value="sch3">SCH 3</option>
-        </select>
-        <label for="sqlLite">Exporter au format SQLite</label>
-        <input type="checkbox" name="sqLite" id="sqlLite">
-        <input type="submit">
+    <div class="form-box">
+        <div id="div_choix">
+            <div class="choix">
+                <select name="database">
+                        <optgroup label="Nom de la base"></optgroup>
+                        <option value="base1">BASE 1</option>
+                        <option value="base2">BASE 2</option>
+                        <option value="base3">BASE 3</option>
+                </select>
+            </div>
+            <div class="choix">
+                <select name="schemas">
+                    <optgroup label="Nom du schemas"></optgroup>
+                    <option value="sch1">SCH 1</option>
+                    <option value="sch2">SCH 2</option>
+                    <option value="sch3">SCH 3</option>
+                </select>
+            </div>
+            <div id="check">
+                <label for="sqlLite">Exporter au format SQLite</label>
+                <input type="checkbox" name="sqLite" id="sqlLite">
+                <span class="checkmark"></span>
+            </div>
+            <div id="submit">
+                <input type="submit" class="bouton">
+            </div>
+        </div>
     </div>
 </form>

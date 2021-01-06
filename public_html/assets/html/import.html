@@ -1,40 +1,39 @@
-<link rel="stylesheet" type="text/css" href="assets/css/import.css">
 <h1>Formulaire importation</h1>
 
 <h3># Il faut mettre l'Ajax #</h3>
 
 <form action="/import" method="get">
-    <div class="import-box">
+    <div class="form-box">
         <div id="div_choix">
-        <div class="choix">
-        <select name="database">
-            <optgroup label="Nom de la base"></optgroup>
-            <option value="base1">BASE 1</option>
-            <option value="base2">BASE 2</option>
-            <option value="base3">BASE 3</option>
-        </select>
-        </div>
             <div class="choix">
-        <select name="schemas">
-            <optgroup label="Nom du schemas"></optgroup>
-            <option value="sch1">SCH 1</option>
-            <option value="sch2">SCH 2</option>
-            <option value="sch3">SCH 3</option>
-        </select>
+            <select name="database">
+                <optgroup label="Nom de la base"></optgroup>
+                <option value="base1">BASE 1</option>
+                <option value="base2">BASE 2</option>
+                <option value="base3">BASE 3</option>
+            </select>
             </div>
             <div class="choix">
-            <input type="file" name="file">
+                <select name="schemas">
+                    <optgroup label="Nom du schemas"></optgroup>
+                    <option value="sch1">SCH 1</option>
+                    <option value="sch2">SCH 2</option>
+                    <option value="sch3">SCH 3</option>
+                </select>
             </div>
             <div class="choix">
-        <select name="configuration">
-            <optgroup label="Configuration"></optgroup>
-            <option value="conf1">Config 1</option>
-            <option value="conf2">Config 2</option>
-            <option value="conf3">Config 3</option>
-        </select>
+                    <input type="file" name="file">
+            </div>
+            <div class="choix">
+                    <select name="configuration">
+                        <optgroup label="Configuration"></optgroup>
+                        <option value="conf1">Config 1</option>
+                        <option value="conf2">Config 2</option>
+                        <option value="conf3">Config 3</option>
+                    </select>
             </div>
             <div id="submit">
-        <input type="submit" class="bouton">
+                <input type="submit" class="bouton">
             </div>
         </div>
     </div>
