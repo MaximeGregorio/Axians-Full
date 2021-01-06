@@ -1,0 +1,22 @@
+.export-box {
+    background: rgba(0, 51, 102, 0.8); /* la couleur de fond */
+    padding: 2vw; /* faire les bords */
+    border-radius: 2vw; /* arrondir les bords */
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6vh;
+    color: white;
+}
+
+.bouton {
+    width: 100%;
+    background: none;
+    color: white;
+    padding: 1.5vh;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 1.5vh 0;
+}
+
+
