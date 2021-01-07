@@ -1,9 +1,8 @@
-<h1>Formulaire importation</h1>
-
 <h3># Il faut mettre l'Ajax #</h3>
 
 <form action="/import" method="get">
     <div class="form-box">
+        <h1>Formulaire d'importation</h1>
         <div id="div_choix">
             <div class="choix">
             <select name="database">
@@ -21,9 +20,10 @@
                     <option value="sch3">SCH 3</option>
                 </select>
             </div>
-            <div class="choix">
-                    <input type="file" name="file">
+            <div id="drop_zone">
+                <input type="file" class="hidden_input" id="test_input" name="file" accept=".zip" required>
             </div>
+            <p id="inputFileName">Aucun fichier choisi</p>
             <div class="choix">
                     <select name="configuration">
                         <optgroup label="Configuration"></optgroup>

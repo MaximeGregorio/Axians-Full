@@ -23,6 +23,9 @@
     width: 20%;
     font-size:25px;
 }
+#main-page form h1 {
+    color: white;
+}
 
 #drop_zone {
     background-image: url("../images/dropIMG.png");
@@ -44,11 +47,12 @@
     background: rgba(0, 51, 102, 0.8); /* la couleur de fond */
     padding: 2vw; /* faire les bords */
     border-radius: 2vw; /* arrondir les bords */
-    width: 400px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 6vh;
     color: white;
+    text-align: center;
 }
 
 .bouton {
