@@ -19,6 +19,10 @@
     margin: 20px;
 }
 
+.choix input[type=text], .choix input[type=password] {
+    font-size:25px;
+}
+
 .choix select{
     width: 20%;
     font-size:25px;
@@ -43,6 +47,7 @@
     height: 100%;
     cursor: pointer;
 }
+
 .form-box {
     background: rgba(0, 51, 102, 0.8); /* la couleur de fond */
     padding: 2vw; /* faire les bords */

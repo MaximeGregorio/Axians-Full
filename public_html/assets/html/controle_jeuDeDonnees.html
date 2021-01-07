@@ -12,9 +12,9 @@
             <h1>Contrôle Jeu de Données</h1>
             <div id="div_choix">
                 <div id="drop_zone">
-                    <input type="file" class="hidden_input" name="file" accept=".zip" required>
-                    <p id="inputFileName">Aucun fichier choisi</p>
+                    <input type="file" class="hidden_input" id="test_input" name="file" accept=".zip" required>
                 </div>
+                <p id="inputFileName">Aucun fichier choisi</p>
                 <div class="choix">
                     <select name="type">
                         <option>TYPE 1</option>
@@ -31,7 +31,9 @@
                     </select>
                 </div>
 
-                <button>Controler</button>
+                <div id="submit">
+                    <input type="submit" class="bouton" value="controller"></input>
+                </div>
             </div>
         </div>
 
