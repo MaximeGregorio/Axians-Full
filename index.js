@@ -84,7 +84,7 @@ const server = http.createServer((req, res) => {
 
     let url = req.url;
 
-    if (url === '/') {
+    if (url === '/' || url === "/?") {
         url = "/index.html";
     }
 
