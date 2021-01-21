@@ -95,3 +95,16 @@
     width: 20px;
     height: 20px;
 }
+
+@media screen and (max-width: 500px) {
+
+    .form-box {
+        width: 75vw;
+    }
+
+    #main-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

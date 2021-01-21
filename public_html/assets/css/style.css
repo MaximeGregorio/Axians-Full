@@ -34,11 +34,14 @@ ul {
     margin-top:3vh;
 }
 #main-ul li ul li a, #main-ul li ul li {
-    font-size: 0.9vw;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.option-button {
+    font-size: 0.9em;
 }
 
 
@@ -88,4 +91,60 @@ img {
 }
 #main-page {
     width: 100%;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 980px){
+    #menu-header {
+        display: none;
+        width: 100%;
+    }
+
+    .menu-title {
+        font-size: 9vw;
+    }
+
+    .option-button {
+        font-size: 3vw;
+    }
+
+    #head {
+        display: none;
+    }
+
+    .mobile-menu {
+        color: rgb(0, 94, 184) ;
+        border: rgb(0, 94, 184) 2px solid;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        width: 30%;
+        margin: auto;
+        border-radius: 30px;
+    }
+
+    .mobile-menu:active {
+        background-color: rgb(0, 94, 184) ;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    body {
+        overflow: hidden;
+        background-size: auto;
+    }
+
+    .menu-title {
+        font-size: 11vw;
+    }
+
+    .option-button {
+        font-size: 6vw;
+    }
+
 }
